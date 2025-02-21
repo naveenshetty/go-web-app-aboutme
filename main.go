@@ -5,15 +5,17 @@ import (
 	"net/http"
 )
 
+func homePage(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "static/home.html")
+}
+
 func main() {
 	// Serve static files
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/", fs)
 
 	// Custom routes
-	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "static/home.html")
-	})
+	http.HandleFunc("/home", homePage)
 	http.HandleFunc("/whoIam", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "static/whoIam.html")
 	})

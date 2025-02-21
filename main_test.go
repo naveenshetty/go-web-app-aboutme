@@ -1,5 +1,3 @@
-// Test the main function
-
 package main
 
 import (
