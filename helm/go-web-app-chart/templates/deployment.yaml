@@ -5,7 +5,12 @@ metadata:
   labels:
     app: go-web-app
 spec:
-  replicas: 1
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0  # Ensures no pod is down during deployment
+      maxSurge: 1        # Adds one extra pod during rollout
   selector:
     matchLabels:
       app: go-web-app
@@ -19,3 +24,16 @@ spec:
         image: naveen192/go-web-app-aboutme:{{ .Values.image.tag }}
         ports:
         - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /home
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /home
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          successThreshold: 1
