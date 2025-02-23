@@ -101,3 +101,6 @@ Add Canary Deployments or Blue-Green Deployment using ArgoCD
 
 ## Access argocd 
 http://34.56.38.194/
+
+## UI 
+http://104.154.168.167/home.html
