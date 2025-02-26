@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: app-resource-quota
+  namespace: go-web-app-aboutme
+spec:
+  hard:
+    requests.cpu: "2"       # Max total CPU requests in the namespace
+    requests.memory: "4Gi"   # Max total memory requests in the namespace
+    limits.cpu: "4"         # Max total CPU limits in the namespace
+    limits.memory: "8Gi"    # Max total memory limits in the namespace
+    pods: "10"              # Max number of pods in the namespace
+    persistentvolumeclaims: "5" # Max number of PVCs

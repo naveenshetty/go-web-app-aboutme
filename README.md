@@ -83,6 +83,8 @@ spec:
 - Enable **IAM Roles for Service Accounts** to securely access cloud resources.
 - Use self-hosted runner or codepipline from cloud provider , because git hub hosted runner we don't have a control so we don't know what is happening under the hood so our code is more private hence better to avoid it.
 - Integration with trivy, sonarcube as security to the github operation
+- Network Policies to Restrict Traffic deploy with yaml file
+- Admision control policy
 
 ## Scalability & High Availability
 

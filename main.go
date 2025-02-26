@@ -26,6 +26,10 @@ func main() {
 		http.ServeFile(w, r, "static/contact.html")
 	})
 
+    /*  http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte("OK"))
+	}) */
 	//log.Println("Server started on :8080")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {

@@ -10,7 +10,7 @@ spec:
     type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 0  # Ensures no pod is down during deployment
-      maxSurge: 1        # Adds one extra pod during rollout
+      maxSurge: 1        # Adds one extra pod during rollout, it tells to replicat controller
   selector:
     matchLabels:
       app: go-web-app
@@ -36,4 +36,4 @@ spec:
             port: 8080
           initialDelaySeconds: 5
           periodSeconds: 5
-          successThreshold: 1
+          successThreshold: 1 #container is marked ready immediately after a single successful probe response
