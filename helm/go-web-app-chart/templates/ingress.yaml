@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: go-web-app
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: / # annotation tells NGINX to rewrite the incoming request path to / when it forwards the request to the go-web-app service.
 spec:
   ingressClassName: nginx
   rules:
