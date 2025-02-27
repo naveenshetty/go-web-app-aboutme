@@ -77,7 +77,8 @@ spec:
 
 - Implement HTTPS using **Managed SSL Certificates**
 
-- Use **Secrets Management Services** for secure secret storage
+- Use **Secrets Management Services** for secure secret storage- Azure key vault,
+  (Install the Azure Key Vault Provider for Secrets Store CSI, create SecretProviderClass yaml,Mount Secrets in a Deployment)
 
 - Enforce **Role-Based Access Control (RBAC)** for better security.  
 - Enable **IAM Roles for Service Accounts** to securely access cloud resources.
@@ -97,6 +98,7 @@ spec:
 Integrate with Cloud Monitoring Services:
 Use Centralized Logging for improved observability
 Instrumention using opentelimetry etc
+Kubeshark for API traffic analyzer 
 
 ## CI/CD Practices
 Add Canary Deployments or Blue-Green Deployment using ArgoCD
